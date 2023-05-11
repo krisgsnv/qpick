@@ -1,0 +1,23 @@
+$body-bg: #EAEAEA;
+$accent-color: #FFA542;
+$accent-btn-text: #FFFFFF;
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font: normal 106.25%/123.5% "Montserrat";
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: $body-bg;
+    padding: 0 1rem;
+}
+
+.container {
+    max-width: calc(1140px - 2rem);
+    margin: 0 auto;
+}
