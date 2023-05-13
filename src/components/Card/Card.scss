@@ -1,0 +1,68 @@
+@import '../../scss/vars.scss';
+@import '../../scss/functions.scss';
+
+.card {
+  background-color: $light-color;
+  box-shadow: $block-box-shadow;
+  border-radius: $block-border-radius;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: pxToRem(15) pxToRem(22) pxToRem(32);
+  min-height: pxToRem(407);
+  &__img {
+    max-width: 77%;
+    flex-basis: pxToRem(240);
+    flex-shrink: 0;
+    object-fit: contain;
+    object-position: center;
+  }
+  &__row {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    &_title {
+      flex-grow: 1;
+      margin-top: pxToRem(52);
+      display: flex;
+      align-items: flex-start;
+    }
+  }
+  &__title {
+    color: #1C1C27;
+    margin-right: pxToRem(10);
+    margin-bottom: pxToRem(15);
+  }
+  &__price {
+    display: block;
+    font-weight: 600;
+    color: $accent-color;
+    white-space: nowrap;
+    &_discount {
+      font-size: pxToRem(13);
+      text-align: center;
+      text-decoration: line-through;
+      line-height: 0.94;
+      color: $accent-light-color;
+    }
+  }
+  &__rating {
+    display: flex;
+    align-items: center;
+    color: $secondary-color;
+    font-weight: 600;
+  }
+  &__star {
+    margin-right: pxToRem(10);
+  }
+  &__btn {
+    font-family: inherit;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    color: $primary-text;
+    font-size: 1rem;
+    font-weight: 600;
+  }
+}

@@ -1,13 +1,14 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 import './Header.scss';
 
 const Header = () => {
   return (
     <header className="header">
-      <span className="logo">Qpick</span>
+      <Link to="/" className="logo">Qpick</Link>
       <div className="header__links">
-        <div className="header-link">
+        <Link to="/" className="header-link">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="22"
@@ -20,8 +21,8 @@ const Header = () => {
             />
           </svg>
           <span className="header-link__counter">2</span>
-        </div>
-        <div className="header-link">
+        </Link>
+        <Link to="/cart" className="header-link">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="23"
@@ -34,7 +35,7 @@ const Header = () => {
             />
           </svg>
           <span className="header-link__counter">1</span>
-        </div>
+        </Link>
       </div>
     </header>
   );

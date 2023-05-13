@@ -1,40 +1,42 @@
-@import '../App/App.scss';
+@import '../../scss/vars.scss';
+@import '../../scss/functions.scss';
 
 .logo {
-    text-transform: uppercase;
-    color: #101010;
-    font-weight: 700;
-    font-size: 1.47rem;
+  text-transform: uppercase;
+  color: #101010;
+  font-weight: 700;
+  font-size: pxToRem(25);
+  line-height: 1.3;
 }
 
 .header {
-    padding: 0.88rem 0;
+  padding: pxToRem(15) 0;
+  display: flex;
+  justify-content: space-between;
+  &__links {
     display: flex;
-    justify-content: space-between;
-    &__links {
-        display: flex;
-        align-items: center;
+    align-items: center;
+  }
+  &-link {
+    position: relative;
+    margin: pxToRem(5) 5px pxToRem(5) 40px;
+    max-height: 22px;
+    &__counter {
+      position: absolute;
+      top: -30%;
+      right: -50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: pxToRem(15);
+      background-color: $accent-color;
+      border-radius: 50%;
+      min-width: pxToRem(19);
+      max-width: pxToRem(22);
+      padding: pxToRem(2) pxToRem(5);
+      line-height: 1;
+      color: $light-color;
+      font-weight: 500;
     }
-    &-link {
-        position: relative;
-        margin: 0.29rem 1.17rem;
-        &__counter {
-            position: absolute;
-            top: -20%;
-            right: -55%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: .88rem;
-            background-color: $accent-color;
-            border-radius: 50%;
-            min-width: 1.06rem;
-            max-width: 1.3rem;
-            padding: 0.08rem 0.3rem;
-            line-height: 1;
-            color: $accent-btn-text;
-            font-weight: 500;
-        }
-    }
+  }
 }
-

@@ -1,23 +1,44 @@
-$body-bg: #EAEAEA;
-$accent-color: #FFA542;
-$accent-btn-text: #FFFFFF;
+@import '../../scss/vars.scss';
+@import '../../scss/functions.scss';
 
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 html {
-    font: normal 106.25%/123.5% "Montserrat";
+  font: normal 17px/123.5% 'Montserrat';
 }
 
 body {
-    margin: 0;
-    padding: 0;
-    background-color: $body-bg;
-    padding: 0 1rem;
+  margin: 0;
+  padding: 0 1rem;
+  background-color: $body-bg-color;
 }
 
 .container {
-    max-width: calc(1140px - 2rem);
-    margin: 0 auto;
+  max-width: calc(1110px + 2rem);
+  margin: 0 auto;
+}
+
+h1, h2, h3, h4, button, ul, li {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+.h2 {
+  font-weight: 600;
+  font-size: pxToRem(20);
+}
+
+.h3 {
+  font-weight: 600;
+  font-size: 1rem;
 }

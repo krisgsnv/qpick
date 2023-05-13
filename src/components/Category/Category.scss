@@ -1,0 +1,16 @@
+@import '../../scss/vars.scss';
+@import '../../scss/functions.scss';
+
+.category {
+  margin-top: pxToRem(28);
+  &__name {
+    color: $secondary-color;
+  }
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(320px, 350px));
+  gap: pxToRem(30);
+  margin-top: pxToRem(20);
+}
