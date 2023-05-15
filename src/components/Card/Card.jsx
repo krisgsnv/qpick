@@ -1,8 +1,27 @@
-import React from 'react';
+import React, { useContext } from 'react';
+
+import { CartContext } from '../App/App';
 
 import './Card.scss';
 
-const Card = ({ img, title, price, discountPrice, rating }) => {
+const Card = (product) => {
+  const { id, img, title, price, oldPrice, rating } = product;
+  const [cart, setCart, increaseProductCount] = useContext(CartContext);
+
+  const inCart = () => {
+    let res = false;
+    cart.forEach((product) => {
+      if (product.id === id) {
+        res = true;
+      }
+    });
+    return res;
+  };
+
+  const addToCart = () => {
+    setCart(() => inCart() ? increaseProductCount(id) : [...cart, { ...product, count: 1, priceTotal: product.price }]);
+  };
+  
   return (
     <div className="card">
       <img src={`./assets/img/${img}`} alt={title} className="card__img" />
@@ -10,8 +29,8 @@ const Card = ({ img, title, price, discountPrice, rating }) => {
         <h3 className="h3 card__title">{title}</h3>
         <div>
           <span className="card__price">{price} ₽</span>
-          {discountPrice && (
-            <span className="card__price card__price_discount">{discountPrice} ₽</span>
+          {oldPrice && (
+            <span className="card__price card__price_discount">{oldPrice} ₽</span>
           )}
         </div>
       </div>
@@ -31,7 +50,7 @@ const Card = ({ img, title, price, discountPrice, rating }) => {
           </svg>
           {rating}
         </div>
-        <button className="card__btn" type="button">
+        <button className="card__btn" type="button" onClick={addToCart}>
           Купить
         </button>
       </div>

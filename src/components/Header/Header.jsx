@@ -1,12 +1,21 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+
+import Logo from '../Logo/Logo';
+import { CartContext } from '../App/App';
 
 import './Header.scss';
 
 const Header = () => {
+  const [cart, ,] = useContext(CartContext);
+
+  const totalAmount = () => cart.reduce((acc, curr) =>  acc + curr.count, 0);
+
+  const total = totalAmount();
+
   return (
     <header className="header">
-      <Link to="/" className="logo">Qpick</Link>
+      <Logo />
       <div className="header__links">
         <Link to="/" className="header-link">
           <svg
@@ -34,7 +43,7 @@ const Header = () => {
               fill="#838383"
             />
           </svg>
-          <span className="header-link__counter">1</span>
+          {total > 0 && <span className="header-link__counter">{total}</span>}
         </Link>
       </div>
     </header>

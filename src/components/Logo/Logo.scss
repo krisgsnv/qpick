@@ -1,0 +1,9 @@
+@import '../../scss/functions.scss';
+
+.logo {
+  text-transform: uppercase;
+  color: #101010;
+  font-weight: 700;
+  font-size: pxToRem(25);
+  line-height: 1.3;
+}

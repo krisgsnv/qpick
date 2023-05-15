@@ -5,13 +5,13 @@ import Card from '../Card/Card';
 
 import './Category.scss';
 
-const Category = ({ name, products }) => {
+const Category = ({ name, items }) => {
   return (
     <section className="category">
       <h2 className="h2 category__name">{name}</h2>
       <div className="cards">
-        {products.map((product) => (
-          <Card {...product} />
+        {items.map(item => (
+          <Card key={item.id} {...item} />
         ))}
       </div>
     </section>

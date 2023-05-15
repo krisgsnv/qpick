@@ -6,8 +6,8 @@ import { products } from '../products.js';
 const Home = () => {
   return (
     <>
-      {products.map(({ categoryName, items }) => (
-        <Category name={categoryName} products={items} />
+      {products.map(({ categoryId, categoryName, items }) => (
+        <Category key={categoryId} name={categoryName} items={items} />
       ))}
     </>
   );

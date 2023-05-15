@@ -1,13 +1,14 @@
 import React from 'react';
 
 import { Link } from 'react-router-dom';
+import Logo from '../Logo/Logo';
 
 import './Footer.scss';
 
 const Footer = () => {
   return (
     <footer className="footer">
-      <Link className="logo">Qpick</Link>
+      <Logo />
       <nav className="menu footer__menu">
         <ul className="menu__list">
           <li className="menu__item">
