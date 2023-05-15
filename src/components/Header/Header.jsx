@@ -8,10 +8,7 @@ import './Header.scss';
 
 const Header = () => {
   const [cart, ,] = useContext(CartContext);
-
-  const totalAmount = () => cart.reduce((acc, curr) =>  acc + curr.count, 0);
-
-  const total = totalAmount();
+  const total = cart.reduce((acc, curr) =>  acc + curr.count, 0);
 
   return (
     <header className="header">

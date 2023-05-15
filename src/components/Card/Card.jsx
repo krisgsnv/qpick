@@ -19,9 +19,12 @@ const Card = (product) => {
   };
 
   const addToCart = () => {
-    setCart(() => inCart() ? increaseProductCount(id) : [...cart, { ...product, count: 1, priceTotal: product.price }]);
+    setCart(() =>
+      inCart() ? increaseProductCount(id)
+        : [...cart, { ...product, count: 1, priceTotal: product.price }],
+    );
   };
-  
+
   return (
     <div className="card">
       <img src={`./assets/img/${img}`} alt={title} className="card__img" />
@@ -29,9 +32,7 @@ const Card = (product) => {
         <h3 className="h3 card__title">{title}</h3>
         <div>
           <span className="card__price">{price} ₽</span>
-          {oldPrice && (
-            <span className="card__price card__price_discount">{oldPrice} ₽</span>
-          )}
+          {oldPrice && <span className="card__price card__price_discount">{oldPrice} ₽</span>}
         </div>
       </div>
       <div className="card__row">

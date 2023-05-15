@@ -1,0 +1,17 @@
+@import '../../scss/vars.scss';
+@import '../../scss/functions.scss';
+
+.cart {
+  margin-top: pxToRem(29);
+}
+
+.cart-items {
+  flex-basis: 57%;
+}
+
+.cart-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  margin-top: pxToRem(13);
+}

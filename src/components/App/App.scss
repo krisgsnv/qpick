@@ -46,6 +46,17 @@ a {
   text-decoration: none;
 }
 
+button,
+a {
+  cursor: pointer;
+}
+
+.h1 {
+  font-weight: 600;
+  font-size: pxToRem(20);
+  color: #1c1c27;
+}
+
 .h2 {
   font-weight: 600;
   font-size: pxToRem(20);

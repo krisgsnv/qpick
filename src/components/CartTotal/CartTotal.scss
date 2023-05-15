@@ -1,0 +1,31 @@
+@import '../../scss/vars.scss';
+@import '../../scss/functions.scss';
+
+.cart-total {
+  flex-basis: pxToRem(350);
+  margin-top: pxToRem(7);
+  background-color: $light-color;
+  box-shadow: $block-box-shadow;
+  border-radius: $block-border-radius;
+  &__heading {
+    font-weight: 600;
+    font-size: pxToRem(15);
+    color: $primary-text;
+    padding: pxToRem(22) pxToRem(22) pxToRem(15);
+    display: flex;
+    justify-content: space-between;
+  }
+  &__btn {
+    background-color: #101010;
+    color: $light-color;
+    border-radius: 20px;
+    border: none;
+    font: inherit;
+    font-weight: 600;
+    padding: pxToRem(22) 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}

@@ -1,0 +1,72 @@
+@import '../../scss/vars.scss';
+@import '../../scss/functions.scss';
+
+.cart-item {
+  display: flex;
+  padding: pxToRem(18);
+  background-color: $light-color;
+  box-shadow: $block-box-shadow;
+  border-radius: $block-border-radius;
+  &__left {
+    margin-right: pxToRem(23);
+  }
+  &__img {
+    width: pxToRem(147);
+    object-fit: contain;
+    object-position: center;
+  }
+  &__counter {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    column-gap: pxToRem(23);
+  }
+  &__counter-value {
+    font-weight: 600;
+    font-size: 1rem;
+    color: $primary-text;
+  }
+  &__btn {
+    color: $light-color;
+    background-color: $accent-light-color;
+    border-radius: 50%;
+    border: 0;
+    width: pxToRem(35);
+    height: pxToRem(30);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  &__right {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+  }
+  &__remove {
+    background-color: transparent;
+    border: none;
+    width: pxToRem(20);
+    align-self: flex-end;
+    margin-bottom: auto;
+  }
+  &__title {
+    color: #1c1c27;
+    font-weight: 500;
+    font-size: 1rem;
+  }
+  &__price {
+    margin-top: pxToRem(12);
+    margin-bottom: pxToRem(15);
+    font-weight: 600;
+    font-size: pxToRem(15);
+    color: #aaaaaa;
+  }
+  &__sum {
+    text-align: right;
+    margin-top: auto;
+    font-weight: 600;
+    font-size: pxToRem(15);
+    color: #1c1c27;
+  }
+}
