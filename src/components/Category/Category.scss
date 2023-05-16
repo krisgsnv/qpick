@@ -10,7 +10,14 @@
 
 .cards {
   display: grid;
-  grid-template-columns: repeat(3, minmax(300px, 350px));
+  grid-template-columns: repeat(3, minmax(pxToRem(280), pxToRem(350)));
   gap: pxToRem(30);
   margin-top: pxToRem(20);
+  @media screen and (max-width: $lg) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @media screen and (max-width: 650px) {
+    grid-template-columns: minmax(calc(320px - 2rem), 350px);
+    justify-content: center;
+  }
 }

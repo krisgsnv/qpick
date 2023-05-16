@@ -19,10 +19,8 @@ const Card = (product) => {
   };
 
   const addToCart = () => {
-    setCart(() =>
-      inCart() ? increaseProductCount(id)
-        : [...cart, { ...product, count: 1, priceTotal: product.price }],
-    );
+    inCart() ? increaseProductCount(id)
+    : setCart(() => [...cart, { ...product, count: 1, priceTotal: product.price }]);
   };
 
   return (

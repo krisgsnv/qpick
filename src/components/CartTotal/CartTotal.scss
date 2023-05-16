@@ -7,6 +7,9 @@
   background-color: $light-color;
   box-shadow: $block-box-shadow;
   border-radius: $block-border-radius;
+  @media screen and (max-width: $md) {
+    flex-basis: auto;
+  }
   &__heading {
     font-weight: 600;
     font-size: pxToRem(15);

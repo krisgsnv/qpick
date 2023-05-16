@@ -10,6 +10,9 @@
   align-items: center;
   padding: pxToRem(15) pxToRem(22) pxToRem(32);
   min-height: pxToRem(407);
+  @media screen and (max-width: $lg) {
+    min-height: auto;
+  }
   &__img {
     max-width: 77%;
     flex-basis: pxToRem(240);
@@ -26,6 +29,9 @@
       margin-top: pxToRem(52);
       display: flex;
       align-items: flex-start;
+      @media screen and (max-width: $lg) {
+        margin-top: 1.5rem;
+      }
     }
   }
   &__title {

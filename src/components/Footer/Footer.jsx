@@ -17,7 +17,7 @@ const Footer = () => {
             </Link>
           </li>
           <li className="menu__item">
-            <Link to="/" className="menu__link">
+            <Link to="/cart" className="menu__link">
               Корзина
             </Link>
           </li>

@@ -1,16 +1,52 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { CartContext } from '../App/App';
 
 import './CartItem.scss';
 
 const CartItem = (product) => {
+  const [cart, setCart, increaseProductCount] = useContext(CartContext);
   const { id, img, title, price, count, priceTotal } = product;
+
+  const removeItem = () => {
+    setCart(() => [...cart.filter((item) => item.id !== id)]);
+  };
+
+  const decreaseProductCount = () => {
+    if (count === 1) {
+      removeItem();
+    } else {
+      setCart(() => {
+        return cart.map((product) => {
+          if (product.id === id) {
+            return {
+              ...product,
+              count: product.count - 1,
+              priceTotal: (product.count - 1) * product.price,
+            };
+          }
+          return product;
+        });
+      });
+    }
+  };
 
   return (
     <div className="cart-item">
       <div className="cart-item__left">
         <img src={`./assets/img/${img}`} alt={title} className="cart-item__img" />
         <div className="cart-item__counter">
-          <button type="button" className="cart-item__btn">
+          <button type="button" className="cart-item__btn" onClick={decreaseProductCount}>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="18"
+              height="2"
+              viewBox="0 0 18 2"
+              fill="none">
+              <path d="M0.788879 0H17.2V2H0.788879V0Z" fill="white" />
+            </svg>
+          </button>
+          <span className="cart-item__counter-value">{count}</span>
+          <button type="button" className="cart-item__btn" onClick={() => increaseProductCount(id)}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="17"
@@ -23,21 +59,10 @@ const CartItem = (product) => {
               />
             </svg>
           </button>
-          <span className="cart-item__counter-value">{count}</span>
-          <button type="button" className="cart-item__btn">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="18"
-              height="2"
-              viewBox="0 0 18 2"
-              fill="none">
-              <path d="M0.788879 0H17.2V2H0.788879V0Z" fill="white" />
-            </svg>
-          </button>
         </div>
       </div>
       <div className="cart-item__right">
-        <button type="button" title="Удалить" className="cart-item__remove">
+        <button type="button" title="Удалить" className="cart-item__remove" onClick={removeItem}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="21"

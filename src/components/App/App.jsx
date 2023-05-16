@@ -14,20 +14,22 @@ const App = () => {
   const [cart, setCart] = useState(JSON.parse(sessionStorage.getItem('cart')) || []);
 
   const increaseProductCount = (id) => {
-    return cart.map((product) => {
-      if (product.id === id) {
-        return {
-          ...product,
-          count: product.count + 1,
-          priceTotal: (product.count + 1) * product.price,
-        };
-      }
-      return product;
+    setCart(() => {
+      return cart.map((product) => {
+        if (product.id === id) {
+          return {
+            ...product,
+            count: product.count + 1,
+            priceTotal: (product.count + 1) * product.price,
+          };
+        }
+        return product;
+      });
     });
   };
 
   useEffect(() => sessionStorage.setItem('cart', JSON.stringify(cart)), [cart]);
-  
+
   return (
     <CartContext.Provider value={[cart, setCart, increaseProductCount]}>
       <div className="container">

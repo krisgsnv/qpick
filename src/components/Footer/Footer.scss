@@ -9,16 +9,31 @@
   margin-top: pxToRem(20);
   display: flex;
   padding: pxToRem(29) pxToRem(27) pxToRem(32) pxToRem(29);
+  @media screen and (max-width: $md) {
+    flex-direction: column;
+  }
+  @media screen and (max-width: $sm) {
+    align-items: center;
+  }
   &__menu {
     margin-left: pxToRem(50);
     flex-grow: 1;
     column-gap: 21.5%;
+    justify-content: center;
+    @media screen and (max-width: $md) {
+      margin-left: 0;
+      justify-content: flex-start;
+      margin-top: 1rem;
+    }
+    @media screen and (max-width: $sm) {
+      flex-direction: column;
+      row-gap: pxToRem(9.5);
+    }
   }
 }
 
 .menu {
   display: flex;
-  justify-content: center;
   color: $primary-text;
   &__link {
     display: block;
@@ -30,14 +45,25 @@
     flex-direction: column;
     row-gap: pxToRem(9.5);
   }
+  &__item {
+    @media screen and (max-width: $sm) {
+      text-align: center;
+    }
+  }
   &__lang {
     margin-top: pxToRem(35);
+    @media screen and (max-width: $sm) {
+      margin-top: 1rem;
+    }
   }
 }
 
 .social {
   display: flex;
   column-gap: pxToRem(18);
+  @media screen and (max-width: $md) {
+    margin-top: 1rem;
+  }
 }
 
 .lang {
